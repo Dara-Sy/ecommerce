@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import './index.css';
 
 class App extends Component {
   state = {
@@ -22,24 +23,26 @@ class App extends Component {
           {this.state.products.map(product =>
               <li key={product.id}>
 
-              <div>
-                <div className="picGallery">
-                  <img src={product.img_url} />
-                </div>
+              <section className="box">
+                  <div className="picGallery">
+                    <img src={product.img_url} />
+                  </div>
 
-                <div>
-                   <h2>{product.name}</h2>
-                </div>
-                <div>
-                    {product.description}
-                </div>
-              </div>
+                  <div className="picGallery">
+                     <h2>{product.name}</h2>
+                  </div>
+                  <div className="picGallery">
+                      {product.description}
+                  </div>
+                  <div className="picGallery">
+                      ${product.price}.00
+                  </div>
+              </section>
 
 
               </li>
               )}
 
-          <img src={`data:image/jpeg;base64,${this.state.data}`} />
 
         </ul>
       </div>

@@ -1,17 +1,43 @@
 body {
-  margin: 0;
-  padding: 0;
+/*  margin: 0;
+  padding: 0;*/
   font-family: sans-serif;
   text-align: center;
 }
 
 .App {
-    text-align: center;
+      /*display: flex;*/
+}
+
+ul {
+  list-style: none;
+}
+
+.box {
+  /*display: flex;*/
+  border-style: dotted;
+  width: 500px;
+  padding: 2px;
+  margin: 2px;
+}
+
+.picGallery {
+  /*display: flex;*/
+  position: relative;
+  padding: 10px;
+  text-align: center;
+  /*align-self: auto | flex-start | flex-end | center | baseline | stretch;*/
 }
 
 
-.picGallery {
-  width: 10%;
-  text-align: center;
-  /*height: 10%;*/
+
+img {
+    width: 400px;
+    height: 300px;
+}
+
+img:hover {
+  opacity: 0.5;
+  -webkit-transition: width 5s; /* Safari */
+  transition: width 5s;
 }
