@@ -14,16 +14,20 @@ ul {
 }
 
 .box {
+  position: relative;
   /*display: flex;*/
+  float: left;
   border-style: dotted;
   width: 500px;
   padding: 2px;
   margin: 2px;
+  text-align: center;
+  /*left: 50%;*/
 }
 
 .picGallery {
   /*display: flex;*/
-  position: relative;
+  /*position: relative;*/
   padding: 10px;
   text-align: center;
   /*align-self: auto | flex-start | flex-end | center | baseline | stretch;*/
@@ -41,3 +45,5 @@ img:hover {
   -webkit-transition: width 5s; /* Safari */
   transition: width 5s;
 }
+
+
