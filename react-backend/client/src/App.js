@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
-  state = { products:[] }
+  state = {
+    products:[],
+    photos: []
+  }
 
   componentDidMount() {
     fetch('/products')
@@ -12,31 +15,40 @@ class App extends Component {
 
   render() {
     return (
+      <body>
       <div className="App">
         <h1>products</h1>
         <ul>
           {this.state.products.map(product =>
               <li key={product.id}>
+
+              <div>
+                <div className="picGallery">
+                  <img src={product.img_url} />
+                </div>
+
                 <div>
-                   {product.name}
+                   <h2>{product.name}</h2>
                 </div>
                 <div>
                     {product.description}
                 </div>
-                    {product.img_url}
-
-                <img src='{product.img_url}' />
+              </div>
 
 
               </li>
               )}
-                <div>
-                  <img src='http://res.cloudinary.com/daracell/image/upload/v1534018227/pure/square.jpg' />
-                </div>
+
+          <img src={`data:image/jpeg;base64,${this.state.data}`} />
+
         </ul>
       </div>
+      </body>
     );
   }
 }
 
 export default App;
+
+
+
