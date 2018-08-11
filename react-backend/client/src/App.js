@@ -2,22 +2,37 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
-  state = { users:[] }
+  state = { products:[] }
 
   componentDidMount() {
-    fetch('/users')
+    fetch('/products')
       .then(res => res.json())
-      .then(users => this.setState({ users}));
+      .then(products => this.setState({ products}));
   }
 
   render() {
     return (
       <div className="App">
-        <h1>Users</h1>
+        <h1>products</h1>
         <ul>
-          {this.state.users.map(user =>
-              <li key={user.id}>{user.username}</li>
+          {this.state.products.map(product =>
+              <li key={product.id}>
+                <div>
+                   {product.name}
+                </div>
+                <div>
+                    {product.description}
+                </div>
+                    {product.img_url}
+
+                <img src='{product.img_url}' />
+
+
+              </li>
               )}
+                <div>
+                  <img src='http://res.cloudinary.com/daracell/image/upload/v1534018227/pure/square.jpg' />
+                </div>
         </ul>
       </div>
     );
