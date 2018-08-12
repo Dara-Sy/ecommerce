@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 import './index.css';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
+
+
+
+
 // import './assets/css/fonts.css';
 
 class App extends Component {
@@ -32,7 +40,12 @@ class App extends Component {
                       {product.description}
                   </div>
                   <div className="picGallery">
-                      ${product.price}.00
+                      ${product.price}.00 {"\n"}
+                      <FontAwesomeIcon icon={faHeart} className="heart" />
+                      {"\n"}
+                      <FontAwesomeIcon icon={faCartPlus} className="cart" />
+
+
                   </div>
               </section>
 

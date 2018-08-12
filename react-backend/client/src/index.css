@@ -10,6 +10,15 @@ body {
   text-align: center;
 }
 
+.heart:hover {
+  color: #dd0202;
+}
+
+.cart:hover {
+  color: #424959;
+}
+
+
 .App {
       /*display: flex;*/
 }
