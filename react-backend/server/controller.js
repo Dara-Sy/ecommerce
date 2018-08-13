@@ -14,6 +14,15 @@ module.exports = {
     }
   },
 
+  async getCat(req, res, next) {
+    try {
+      res.locals.categories = await productsDB.getAllCategories(req.query);
+      next();
+    } catch(e) {
+      next(e);
+    }
+  }
+
 }
 
 

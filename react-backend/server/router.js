@@ -9,4 +9,11 @@ router.route('/products')
   controller.getAll,
   resHandler.sendJSON)
 
+// connecting route to categories through routes/categories.js
+
+// router.route('/categories')
+// .get(
+//   controller.getCat,
+//   resHandler.sendJSON)
+
 module.exports = router;

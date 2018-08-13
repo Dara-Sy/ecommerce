@@ -8,6 +8,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
 const productsRouter =require('./server/router');
+const catRouter =require('./routes/categories');
 
 const app = express();
 
@@ -23,11 +24,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
 
 app.use('/', productsRouter);
+// app.use('/users', usersRouter);
+
+
+app.use('/categories', catRouter);
 
 
 app.listen(PORT, () => {

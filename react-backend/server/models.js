@@ -5,5 +5,11 @@ module.exports = {
     return db.many(`
       SELECT * FROM products
       `, data);
+  },
+
+  getAllCategories(data) {
+    return db.any(`
+      SELECT * FROM categories
+      `, data);
   }
 }

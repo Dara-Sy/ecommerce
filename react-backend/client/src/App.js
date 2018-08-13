@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import './index.css';
+// import { BrowserRouter as Router } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
@@ -27,7 +31,17 @@ class App extends Component {
     return (
       <body>
       <div className="App">
-        <h1>products</h1>
+
+      <header>
+          <h1>products</h1>
+
+          <a href="/" className="navLinks">Home</a>
+          <a href="/categories" className="navLinks">Categories</a>
+
+
+      </header>
+
+
         <ul>
           {this.state.products.map(product =>
               <li key={product.id}>
@@ -56,12 +70,17 @@ class App extends Component {
 
         </ul>
       </div>
+
+
+
       </body>
     );
   }
 }
 
 export default App;
+
+
 
 
 
