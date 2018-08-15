@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import './App.css';
 import './index.css';
 // import { BrowserRouter as Router } from 'react-router-dom';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+// import { Route, Switch, Redirect } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
+
+import Categories from './Categories';
 
 
 
@@ -81,13 +84,19 @@ class App extends Component {
 
 
         </ul>
+
       </div>
 
 
 
       </body>
+
+
+
     );
+
   }
+
 }
 
 export default App;
@@ -96,3 +105,20 @@ export default App;
 
 
 
+      /* <BrowserRouter>
+        <Switch>
+
+          <Route
+            render={() => (
+              <Categories
+                name={this.state.name}
+                img_url={this.state.img_url} />)}
+                exact path="/categories"
+              />
+
+          <Route exact path="/" component={App} />
+
+        </Switch>
+      </BrowserRouter>
+
+      */

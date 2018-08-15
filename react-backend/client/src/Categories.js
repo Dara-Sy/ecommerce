@@ -16,7 +16,7 @@ class Categories extends Component {
   }
 
   componentDidMount() {
-    fecth('/categories')
+    fetch('/categories')
     .then(res => res.json())
     .then(categories => this.seState({ categories}));
   }
@@ -26,10 +26,6 @@ class Categories extends Component {
       <div className="Categories">
       <header>
           <h1>Categories</h1>
-
-          <a href="/" className="navLinks">Home</a>
-          <a href="/categories" className="navLinks">Categories</a>
-
 
       </header>
 
