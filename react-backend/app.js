@@ -7,8 +7,8 @@ const logger = require('morgan');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
-const productsRouter =require('./server/router');
 const catRouter =require('./routes/categories');
+const productsRouter =require('./routes/products');
 
 const app = express();
 
@@ -25,11 +25,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use('/', productsRouter);
 // app.use('/users', usersRouter);
 
 
 app.use('/categories', catRouter);
+app.use('/', productsRouter);
 
 
 app.listen(PORT, () => {

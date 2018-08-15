@@ -17,15 +17,27 @@ import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 
 class App extends Component {
   state = {
-    products:[],
-    photos: []
+    products:[]
   }
+
+//   componentDidMount() {
+//     fetch('/products')
+//       .then(res => res.json())
+//       .then(products => this.setState({ products: json.products });
+//   });
+
+// }
 
   componentDidMount() {
     fetch('/products')
       .then(res => res.json())
-      .then(products => this.setState({ products}));
-  }
+      .then(p => {
+        this.setState({
+        products: p.products
+  })
+ })
+      .catch((err) => console.log(err))
+}
 
   render() {
     return (
