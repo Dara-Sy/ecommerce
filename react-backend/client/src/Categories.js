@@ -15,11 +15,17 @@ class Categories extends Component {
     categories: []
   }
 
-  componentDidMount() {
+    componentDidMount() {
     fetch('/categories')
-    .then(res => res.json())
-    .then(categories => this.seState({ categories}));
-  }
+      .then(res => res.json())
+      .then(p => {
+        this.setState({
+        categories: p.categories
+  })
+ })
+      .catch((err) => console.log(err))
+}
+
 
   render() {
     return (
@@ -29,20 +35,7 @@ class Categories extends Component {
 
       </header>
 
-      <ul>
-        {this.state.categories.map(category =>
-          <li key={category.id}>
 
-          <section className="box">
-            <div className="picGallery">
-              <img src={category.img_url} />
-
-              <h2> {category.name} </h2>
-            </div>
-          </section>
-          </li>
-          )}
-        </ul>
         </div>
       );
   }

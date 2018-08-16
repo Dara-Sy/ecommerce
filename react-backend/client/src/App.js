@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import './index.css';
 // import { BrowserRouter as Router } from 'react-router-dom';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect, NavLink, Link } from 'react-router-dom';
 // import { Route, Switch, Redirect } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -20,7 +20,8 @@ import Categories from './Categories';
 
 class App extends Component {
   state = {
-    products:[]
+    products:[],
+    categories:[]
   }
 
 //   componentDidMount() {
@@ -50,8 +51,12 @@ class App extends Component {
       <header>
           <h1>products</h1>
 
-          <a href="/" className="navLinks">Home</a>
-          <a href="/categories" className="navLinks">Categories</a>
+          <Link to="/">Home</Link> <br />
+
+
+          <Link to="/categories">Categories</Link>
+
+
 
 
       </header>
@@ -95,9 +100,20 @@ class App extends Component {
 
     );
 
+      <Switch>
+
+        <Route path="/categories" component={Categories} />
+        <Route path="/" component={App} />
+
+
+      </Switch>
   }
 
 }
+
+
+
+
 
 export default App;
 
@@ -105,20 +121,3 @@ export default App;
 
 
 
-      /* <BrowserRouter>
-        <Switch>
-
-          <Route
-            render={() => (
-              <Categories
-                name={this.state.name}
-                img_url={this.state.img_url} />)}
-                exact path="/categories"
-              />
-
-          <Route exact path="/" component={App} />
-
-        </Switch>
-      </BrowserRouter>
-
-      */
