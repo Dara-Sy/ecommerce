@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const resHandler = require('../server/resHandler');
-const controller = require('../server/controller');
+const productsController = require('../server/productsController');
 
 
 
 router.route('/products')
 .get(
-  controller.getAll,
+  productsController.getAll,
   resHandler.sendJSON)
 
 // connecting route to categories through routes/categories.js

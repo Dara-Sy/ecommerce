@@ -1,4 +1,4 @@
-const productsDB = require('./models');
+const productsDB = require('../models/productsModels');
 
 module.exports = {
 
@@ -10,15 +10,6 @@ module.exports = {
       res.locals.products = await productsDB.getAllProducts(req.query);
       next();
     } catch (e) {
-      next(e);
-    }
-  },
-
-  async getCat(req, res, next) {
-    try {
-      res.locals.categories = await productsDB.getAllCategories(req.query);
-      next();
-    } catch(e) {
       next(e);
     }
   }
