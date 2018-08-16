@@ -1,9 +1,8 @@
 const db = require('../config/connection');
 
-module.exports = {}
-
+module.exports = {
   getAllCategories(data) {
-    return db.any(`
+    return db.many(`
       SELECT * FROM categories
       `, data);
   }

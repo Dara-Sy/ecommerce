@@ -4,7 +4,6 @@ const resHandler = require('../server/resHandler');
 const productsController = require('../server/productsController');
 
 
-
 router.route('/products')
 .get(
   productsController.getAll,

@@ -5,7 +5,7 @@ const categoriesController = require('../server/categoriesController');
 
 
 
-router.route('/categories')
+router.route('/')
 .get(
   categoriesController.getAllCat,
   resHandler.sendJSON)
