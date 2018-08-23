@@ -38,13 +38,30 @@ class App extends Component {
 
 
   componentWillMount() {
+    this.fetchProducts();
+    this.fetchCategories();
+}
+
+fetchProducts() {
     fetch('http://localhost:3000/products')
       .then(res => res.json())
       .then(p => {
         this.setState({
         products: p.products
-  })
- })
+    })
+   })
+      .catch((err) => console.log(err))
+
+}
+
+fetchCategories(){
+  fetch('http://localhost:3000/categories')
+    .then(res => res.json())
+    .then(p => {
+      this.setState({
+        categories: p.categories
+      })
+    })
       .catch((err) => console.log(err))
 }
 

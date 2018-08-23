@@ -10,42 +10,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 
-class Categories extends Component {
-  state = {
-    categories: []
-  }
+import CategoryItem from './CategoryItem';
 
-    componentDidMount() {
-    fetch('/categories')
-      .then(res => res.json())
-      .then(p => {
-        this.setState({
-        categories: p.categories
-  })
- })
-      .catch((err) => console.log(err))
+
+function Categories(props) {
+  console.log("categories categories", props.categories)
+  const categ = props.categories &&
+    props.categories.map((category, index) => <CategoryItem key={index} {...category}/>)
+
+  return (
+    <div>
+    <ul className="Categories List">
+      <h1>Categories List</h1>
+        {categ}
+    </ul>
+    </div>
+  )
 }
 
-
-  render() {
-    return (
-      <div className="Categories">
-      <header>
-          <h1>Categories</h1>
-
-      </header>
-
-
-        </div>
-      );
-  }
-}
 
 export default Categories;
-
-
-
-
-
-
-
