@@ -12,28 +12,33 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 
 import Categories from './Categories';
-
-
-
-
-// import './assets/css/fonts.css';
+import Products from './Products';
 
 class App extends Component {
-  state = {
-    products:[],
-    categories:[]
+  constructor() {
+    super();
+
+    this.state = {
+      products: [
+      {"id": 1,
+      "name": "Square Prints",
+      "description": "4\" x 4\" photos",
+      "img_url": "http://res.cloudinary.com/daracell/image/upload/v1534018227/pure/square.jpg",
+      "price": 10,
+      "category_id": 1}],
+
+      categories: [],
+      img_url: '',
+      name: '',
+      description: '',
+      price: ''
+    }
+    // put some binding method here for faves and adding to cart
   }
 
-//   componentDidMount() {
-//     fetch('/products')
-//       .then(res => res.json())
-//       .then(products => this.setState({ products: json.products });
-//   });
 
-// }
-
-  componentDidMount() {
-    fetch('/products')
+  componentWillMount() {
+    fetch('http://localhost:3000/products')
       .then(res => res.json())
       .then(p => {
         this.setState({
@@ -43,75 +48,49 @@ class App extends Component {
       .catch((err) => console.log(err))
 }
 
-  render() {
+
+// import './assets/css/fonts.css';
+
+render() {
+  console.log(this.state);
     return (
-      <body>
-      <div className="App">
+      <div className="Products">
 
       <header>
           <h1>products</h1>
 
           <Link to="/">Home</Link> <br />
-
-
+          <Link to="/products">Products</Link>
           <Link to="/categories">Categories</Link>
-
-
-
 
       </header>
 
-
-        <ul>
-          {this.state.products.map(product =>
-              <li key={product.id}>
-
-              <section className="box">
-                  <div className="picGallery">
-                    <img src={product.img_url} />
-
-                     <h2>{product.name}</h2>
-                      {product.description}
-                  </div>
-                  <div className="picGallery">
-                      ${product.price}.00 {"\n"}
-                      <FontAwesomeIcon icon={faHeart} className="heart" />
-                      {"\n"}
-                      <FontAwesomeIcon icon={faCartPlus} className="cart" />
+      <p> This is App. </p>
 
 
-                  </div>
-              </section>
+      <Switch>
 
+        <Route
+          render={() => (
+            <Categories categories={this.state.categories} />)}
+            path="/categories"
+        />
 
-              </li>
-              )}
+        <Route
+          render={() => (
+            <Products
+              products={this.state.products} />)}
+              path="/products"
+        />
 
-
-        </ul>
+      </Switch>
 
       </div>
 
 
-
-      </body>
-
-
-
     );
-
-      <Switch>
-
-        <Route path="/categories" component={Categories} />
-        <Route path="/" component={App} />
-
-
-      </Switch>
   }
-
 }
-
-
 
 
 
