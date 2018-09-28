@@ -1,0 +1,175 @@
+/*@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext');*/
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+@import url('https://fonts.googleapis.com/css?family=Sacramento');
+
+
+body {
+/*  margin: 0;
+  padding: 0;*/
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+}
+
+* {
+  text-align: center;
+}
+
+.heart:hover {
+  color: #dd0202;
+}
+
+.cart:hover {
+  color: #424959;
+}
+
+
+.App {
+      /*display: flex;*/
+}
+
+.title {
+  font-family: 'Sacramento', sans-serif;
+  font-size: 5
+  vw;
+}
+
+/* links styling */
+
+
+a:link {
+    color: #000;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: #000;
+}
+
+/* mouse over link */
+a:hover {
+    color: grey;
+}
+
+/* selected link */
+a:active {
+    color: #000;
+}
+
+ul {
+  list-style: none;
+}
+
+.navLinks {
+  padding-right: 20px;
+}
+
+.menu {
+  display: inline-block;
+  font-weight: bold;
+  margin-left: 15px;
+  text-align: center;
+  position: relative;
+  top: -20px;
+}
+
+/* creates a div box for product */
+
+.box {
+  position: relative;
+  /*display: flex;*/
+  float: left;
+  /*border-style: dotted;*/
+  width: 370px;
+  margin: 2px;
+  text-align: center;
+  /*left: 8%;*/
+}
+
+/* creates spacing between pics and info */
+
+.picGallery {
+  padding: 10px;
+  /*background-color: green;*/
+  position: relative;
+  top: 40%;
+  left: 5%;
+  margin-right: -20%;
+  transform: translate(-5%, -5%);
+}
+
+.Products {
+  text-align: center;
+}
+
+
+img {
+    width: 340px;
+    height: 230px;
+}
+
+img:hover {
+  opacity: 0.5;
+  -webkit-transition: width 5s; /* Safari */
+  transition: width 5s;
+}
+
+    @media screen and (max-width: 912px) {
+      h1 {
+        text-align: center;
+      }
+      .box {
+        position: relative;
+        float: left;
+        left: 40px;
+        /*width: 100%;*/
+        width: 370px;
+        margin: 2px;
+        text-align: center;
+      }
+    }
+
+
+    @media screen and (max-width: 700px) {
+      h1 {
+        text-align: center;
+      }
+      .box {
+        position: relative;
+        float: left;
+        left: -30px;
+        /*width: 100%;*/
+        width: 370px;
+        margin: 2px;
+        text-align: center;
+      }
+    }
+
+    @media screen and (max-width: 416px) {
+      h1 {
+        text-align: center;
+      }
+      .box {
+        position: relative;
+        left: -60px;
+        width: 100%;
+      }
+      img {
+        width: 270px;
+        height: 190px;
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
